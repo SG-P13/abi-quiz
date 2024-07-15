@@ -131,7 +131,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: scene
+          m_StringArgument: Einstellung
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &3308907602844814365
