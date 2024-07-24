@@ -37,7 +37,11 @@ public class CataloguesManager : MonoBehaviour
     private int questionIndexAfterReset = -1;
     private int catalogueIndexAfterReset = -1;
 
-
+    // for toggled panel in statistics screen
+    public GameObject buttonPrefab;
+    public GameObject panelPrefab;
+    public Transform buttonParent;
+    public Transform panelParent;
     void Start()
     {
         if(SceneManager.GetActiveScene().name != "Catalogues")
@@ -423,7 +427,7 @@ public class CataloguesManager : MonoBehaviour
 
         if (currentCatalogue == Global.tmpCatalogue)
         {
-            // trivial löschen. Es gibt ja keine IDs
+            // trivial lï¿½schen. Es gibt ja keine IDs
             Global.tmpCatalogue.questions.Remove(currentQuestion);
             currentCatalogue = Global.tmpCatalogue;
         }
