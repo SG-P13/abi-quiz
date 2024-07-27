@@ -37,11 +37,6 @@ public class CataloguesManager : MonoBehaviour
     private int questionIndexAfterReset = -1;
     private int catalogueIndexAfterReset = -1;
 
-    // for toggled panel in statistics screen
-    public GameObject buttonPrefab;
-    public GameObject panelPrefab;
-    public Transform buttonParent;
-    public Transform panelParent;
     void Start()
     {
         if(SceneManager.GetActiveScene().name != "Catalogues")
@@ -106,7 +101,10 @@ public class CataloguesManager : MonoBehaviour
                 if(c.name.StartsWith("Neuer Fragenkatalog"))
                     newCatalogueNameCounter++;
             }
-            Global.tmpCatalogue ??= new(-1, "Neuer Fragenkatalog" + (newCatalogueNameCounter > 0 ? (" " + newCatalogueNameCounter.ToString()) : ""), new()); // If null -> make a new one.
+
+            string newCatalogueName = "Neuer Fragenkatalog" + (newCatalogueNameCounter > 0 ? (" " + newCatalogueNameCounter.ToString()) : "");
+            
+            Global.tmpCatalogue ??= new Catalogue(-1, newCatalogueName, new List<Question>()); // If null -> make a new one.            
             currentCatalogue = Global.tmpCatalogue;
             catalogueSelection.value = catalogueSelection.options.Count - 1; // The last index is always "Neu" or the Global.tmpCatalogue
             UpdateCatalogueSelectionTextForCurrentCatalogue();
